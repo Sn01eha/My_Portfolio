@@ -1,0 +1,838 @@
+/* General Body Styles (no change needed here) */
+body {
+    font-family: Arial, sans-serif; /* Choose a suitable font */
+    margin: 0;
+    padding: 0;
+    background-color: #ffe0e0; /* Light pink background from your image */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar Styles (no change needed here) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d89f9f; /* Slightly darker pink for the header */
+    padding: 15px 50px;
+    color: white;
+}
+
+.navbar .brand h1 {
+    margin: 0;
+    font-size: 2.2em;
+    color: #333; /* Darker text for name */
+}
+
+.navbar .brand p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555; /* Slightly lighter text for tagline */
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 30px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #e0e0e0;
+}
+
+/* Hero Section Styles (Main content area - no change needed here) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 50px;
+    gap: 80px; /* Space between profile pic and text */
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+}
+
+.profile-container {
+    width: 300px; /* Adjust size of the circle */
+    height: 300px; /* Adjust size of the circle */
+    border-radius: 50%;
+    overflow: hidden; /* Ensures image stays within the circle */
+    background-color: #7a6e6e; /* Dark brown color for the circle background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow */
+}
+
+.profile-pic {
+    width: 80%; /* Make image fill the circle */
+    height: 100%;
+    object-fit: cover; /* Crop image to fit while maintaining aspect ratio */
+}
+
+.welcome-content {
+    max-width: 500px; /* Limit width of text for readability */
+    text-align: left;
+}
+
+.welcome-content h2 {
+    font-size: 3.5em; /* Large "WELCOME!" text */
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.welcome-content p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Button Styles - MODIFIED */
+.buttons-container {
+    display: flex;
+    gap: 15px; /* Reduced gap between buttons */
+    /* Removed flex-wrap to force them onto one line if possible */
+    justify-content: flex-start; /* Align buttons to the start of the container */
+}
+
+.btn {
+    background-color: #0000ff; /* Blue color for buttons */
+    color: white;
+    padding: 12px 20px; /* Slightly reduced padding to make them narrower */
+    border-radius: 25px; /* Adjust border-radius to make them more oval/pill-shaped */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em; /* Slightly reduced font size */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    /* Removed min-width to allow them to shrink more naturally */
+    display: inline-block; /* Change to inline-block for better horizontal flow if flex-wrap is removed */
+    white-space: nowrap; /* Prevent text from wrapping inside the button */
+}
+
+.btn:hover {
+    background-color: #0000cc; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Responsive Adjustments (Optional but Recommended) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+        gap: 40px;
+    }
+
+    .profile-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .welcome-content h2 {
+        font-size: 2.8em;
+    }
+
+    .welcome-content p {
+        font-size: 1.1em;
+    }
+
+    .buttons-container {
+        /* On smaller screens, allow buttons to wrap again */
+        flex-wrap: wrap;
+        justify-content: center; /* Center them when they wrap */
+    }
+
+    .btn {
+        margin: 5px; /* Add some margin when they wrap */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .welcome-content h2 {
+        font-size: 2.2em;
+    }
+
+    .btn {
+        padding: 10px 18px; /* Further reduce padding for tiny screens */
+        font-size: 0.9em;
+    }
+}
+/* Add these styles to your existing style.css file */
+
+/* About Page Specific Styles */
+.about-page-content {
+    background-color: #ffe0e0; /* Match body background */
+    padding: 50px 100px; /* Adjust padding as needed */
+    max-width: 1200px; /* Limit content width */
+    margin: 0 auto; /* Center the content */
+    box-sizing: border-box; /* Include padding in element's total width/height */
+}
+
+.page-title {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* A bold, playful font - adjust as desired */
+    font-size: 4em; /* Adjust size */
+    color: #333;
+    text-align: left; /* Align to the left */
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    /* You might need to import a specific font if 'Comic Sans MS' isn't available or preferred */
+}
+
+.section-block {
+    display: flex;
+    align-items: flex-start; /* Align icon and text at the top */
+    margin-bottom: 40px; /* Space between sections */
+    gap: 30px; /* Space between icon and text */
+}
+
+.icon-container {
+    background-color: #d89f9f; /* Background color for the icon circle */
+    border-radius: 50%;
+    width: 60px; /* Size of the icon circle */
+    height: 60px; /* Size of the icon circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent icon container from shrinking */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.icon-container i {
+    color: white; /* Color of the icon */
+    font-size: 2.2em; /* Size of the icon */
+}
+
+.section-block .text-content {
+    flex-grow: 1; /* Allow text content to take remaining space */
+}
+
+.section-block .text-content h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.section-block .text-content h4 {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.section-block .text-content p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Responsive Adjustments for About Page */
+@media (max-width: 768px) {
+    .about-page-content {
+        padding: 30px 30px;
+    }
+
+    .page-title {
+        font-size: 3em;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .section-block {
+        flex-direction: column; /* Stack icon and text on small screens */
+        align-items: center; /* Center them when stacked */
+        text-align: center;
+        gap: 15px;
+    }
+
+    .icon-container {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-container i {
+        font-size: 1.8em;
+    }
+
+    .section-block .text-content h3 {
+        font-size: 1.6em;
+    }
+
+    .section-block .text-content h4 {
+        font-size: 1.1em;
+    }
+
+    .section-block .text-content p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-page-content {
+        padding: 20px 15px;
+    }
+
+    .page-title {
+        font-size: 2.5em;
+    }
+}
+/* Add these styles to your existing style.css file, below the about page styles */
+
+/* Skills & Achievements Page Specific Styles */
+.skills-achievements-page-content {
+    background-color: #ffe0e0; /* Match body background */
+    padding: 50px 100px; /* Adjust padding as needed */
+    max-width: 1200px; /* Limit content width */
+    margin: 0 auto; /* Center the content */
+    box-sizing: border-box;
+}
+
+/* Reusing .page-title from about.html for consistency */
+/* .page-title {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 4em;
+    color: #333;
+    text-align: left;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+} */
+
+.content-columns {
+    display: flex;
+    gap: 40px; /* Space between the two columns */
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    justify-content: center; /* Center columns when wrapped */
+}
+
+.skills-column,
+.achievements-column {
+    flex: 1; /* Allow columns to grow and shrink */
+    min-width: 380px; /* Minimum width before wrapping */
+    background-color: #f7e6e6; /* Slightly darker background for the columns as per image */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.icon-header i {
+    background-color: #d89f9f; /* Match the icon circle background from About Me page */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.8em;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.icon-header h3 {
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Applied to these subheadings */
+}
+
+.skills-list h4,
+.achievements-list h4 {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.skills-list p,
+.achievements-list p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 8px; /* Space between lines in lists */
+}
+
+.skills-list p strong,
+.achievements-list p strong {
+    color: #333; /* Make the bolded text stand out a bit more */
+}
+
+
+/* Responsive Adjustments for Skills & Achievements Page */
+@media (max-width: 992px) {
+    .skills-achievements-page-content {
+        padding: 40px 50px;
+    }
+
+    .content-columns {
+        flex-direction: column; /* Stack columns on smaller screens */
+        gap: 30px;
+    }
+
+    .skills-column,
+    .achievements-column {
+        min-width: unset; /* Remove min-width when stacking */
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-achievements-page-content {
+        padding: 30px 30px;
+    }
+
+    .page-title {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .icon-header {
+        justify-content: center; /* Center icon and text in stacked columns */
+        text-align: center;
+    }
+    
+    .icon-header i {
+        margin-right: 0; /* Remove right margin when stacked */
+        margin-bottom: 15px; /* Add bottom margin instead */
+    }
+
+    .skills-list,
+    .achievements-list {
+        text-align: center; /* Center text within columns on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-achievements-page-content {
+        padding: 20px 15px;
+    }
+
+    .page-title {
+        font-size: 2.5em;
+    }
+
+    .icon-header h3 {
+        font-size: 1.8em;
+    }
+
+    .skills-list p,
+    .achievements-list p {
+        font-size: 1em;
+    }
+}
+/* Add these styles to your existing style.css file, below other page styles */
+
+/* My Work Page Specific Styles */
+.my-work-page-content {
+    background-color: #ffe0e0;
+    padding: 50px 100px;
+    max-width: 1400px; /* Wider for more columns */
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Reusing .page-title for consistency */
+/* .page-title { ... } */
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    gap: 40px; /* Space between project cards */
+    justify-content: center; /* Center cards in the grid */
+}
+
+.project-card {
+    background-color: #f7e6e6; /* Light background for the cards */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Important for image container overflow */
+    width: 320px; /* Fixed width for each card */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-image-container {
+    width: 100%;
+    height: 200px; /* Fixed height for the image area */
+    overflow: hidden; /* Hide overflowing images initially */
+    position: relative; /* For absolute positioning of images */
+    background-color: #7a6e6e; /* Placeholder background before image loads */
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container, cropping if necessary */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Initially hide additional images */
+.project-image.additional-image {
+    opacity: 0;
+    transform: translateY(100%); /* Position below visible area */
+}
+
+/* Hover effect for image container */
+.project-card:hover .project-image-container {
+    overflow-y: scroll; /* Enable vertical scroll on hover */
+    height: 300px; /* Expand height on hover to show more images/scroll */
+}
+
+.project-card:hover .project-image.main-image {
+    transform: translateY(0); /* Ensure main image stays in place */
+    opacity: 1; /* Ensure main image is visible */
+}
+
+.project-card:hover .project-image.additional-image {
+    opacity: 1; /* Show additional images */
+    position: static; /* Let them flow naturally for scrolling */
+    transform: translateY(0);
+}
+
+
+.project-details {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1; /* Allow details section to grow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-icon {
+    background-color: #d89f9f; /* Background for icon circle */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.project-icon i {
+    color: white;
+    font-size: 1.8em;
+}
+
+.project-details h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-details p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive Adjustments for My Work Page */
+@media (max-width: 1200px) {
+    .my-work-page-content {
+        padding: 50px 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .my-work-page-content {
+        padding: 40px 30px;
+    }
+
+    .project-card {
+        width: 45%; /* Two cards per row */
+        max-width: 350px; /* Limit max width */
+    }
+
+    .project-image-container {
+        height: 180px;
+    }
+    .project-card:hover .project-image-container {
+        height: 250px; /* Adjust expanded height */
+    }
+}
+
+@media (max-width: 768px) {
+    .my-work-page-content {
+        padding: 30px 20px;
+    }
+
+    .page-title {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .project-card {
+        width: 90%; /* One card per row */
+        max-width: 400px;
+    }
+
+    .project-image-container {
+        height: 220px;
+    }
+    .project-card:hover .project-image-container {
+        height: 320px; /* Adjust expanded height */
+    }
+}
+
+@media (max-width: 480px) {
+    .my-work-page-content {
+        padding: 20px 10px;
+    }
+
+    .page-title {
+        font-size: 2.5em;
+    }
+
+    .project-image-container {
+        height: 180px;
+    }
+    .project-card:hover .project-image-container {
+        height: 280px; /* Adjust expanded height */
+    }
+}
+/* Add these styles to your existing style.css file, below other page styles */
+
+/* Contact Page Specific Styles */
+.contact-page-content {
+    background-color: #ffe0e0;
+    padding: 50px 100px;
+    max-width: 1000px; /* Adjust width for form */
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Reusing .page-title for consistency */
+/* .page-title { ... } */
+
+.contact-info {
+    background-color: #f7e6e6;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    text-align: center; /* Center align text as per image */
+}
+
+.contact-info h3 {
+    font-size: 2em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+    display: flex; /* Use flex to align icon and text */
+    align-items: center;
+    justify-content: center; /* Center content when using flex */
+}
+
+.contact-info p i {
+    color: #d89f9f; /* Match theme color for icons */
+    margin-right: 15px;
+    font-size: 1.5em;
+    width: 30px; /* Fixed width for icons to align text */
+    text-align: center;
+}
+
+.contact-info p a {
+    color: #007bff; /* Standard link blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info p a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.contact-form-section {
+    background-color: #d89f9f; /* Darker pink for form section */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block; /* Make labels appear above inputs */
+    font-size: 1.1em;
+    color: white; /* White labels */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    border: none; /* Remove default border */
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #f7e6e6; /* Light background for inputs */
+    color: #333;
+    outline: none; /* Remove outline on focus */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 0 2px #ffe0e0; /* Highlight on focus */
+}
+
+.submit-btn {
+    background-color: #555; /* Darker grey for submit button */
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px; /* Pill shape */
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block; /* Make it block to center with margin auto */
+    margin: 30px auto 0; /* Center button */
+}
+
+.submit-btn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsive Adjustments for Contact Page */
+@media (max-width: 992px) {
+    .contact-page-content {
+        padding: 40px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page-content {
+        padding: 30px 30px;
+    }
+
+    .page-title {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .contact-info p {
+        flex-direction: column; /* Stack icon and text on smaller screens */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-info p i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .contact-form-section {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-page-content {
+        padding: 20px 15px;
+    }
+
+    .page-title {
+        font-size: 2.5em;
+    }
+
+    .contact-info {
+        padding: 20px;
+    }
+
+    .contact-info h3 {
+        font-size: 1.8em;
+    }
+
+    .contact-info p {
+        font-size: 1em;
+    }
+
+    .contact-form-section {
+        padding: 20px;
+    }
+
+    .contact-form label {
+        font-size: 1em;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="tel"],
+    .contact-form textarea {
+        width: 100%; /* Ensure full width on smallest screens */
+        padding: 8px;
+    }
+
+    .submit-btn {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+}

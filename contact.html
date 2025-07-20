@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneha BV - Contact Me</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand">
+            <h1>SNEHA BV</h1>
+            <p>CSE '26 | AR & GAME DEV ENTHUSIAST</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html">My Work</a></li>
+                <li><a href="assets/My_resume.pdf" target="_blank">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-page-content">
+        <h2 class="page-title">LET'S CONNECT !</h2>
+
+        <section class="contact-info">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-envelope"></i> E-mail: <a href="mailto:snehavb1912@gmail.com">snehavb1912@gmail.com</a></p>
+            <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/Sn01eha" target="_blank">https://github.com/Sn01eha</a></p>
+            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/sneha-bv-4703b2280" target="_blank">https://www.linkedin.com/in/sneha-bv-4703b2280</a></p>
+        </section>
+
+        <section class="contact-form-section">
+            <form action="https://formspree.io/f/xrblbljq" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                 <div class="form-group">
+                    <label for="phone">Phone number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
